@@ -6,3 +6,11 @@ CREATE TABLE Employee (
     Position VARCHAR (50),
     Salary DECIMAL (10, 2)
 );
+
+SELECT *
+FROM Employee
+WHERE LastName IN (
+    SELECT LastName
+    FROM Employee
+    WHERE DateOfBirth = '2000-07-10'
+);
